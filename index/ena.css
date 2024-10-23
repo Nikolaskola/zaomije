@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: url('srce.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+h1 {
+    color: #000;
+    margin-top: 20px;
+    position: absolute;
+    top: 10px; /* Naslov skroz gore */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: #ff4081;
+    transform: translateY(-50%);
+}
+
+.event {
+    position: relative;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.date {
+    font-size: 14px;
+    color: #000;
+    padding: 10px;
+    background-color: #ff4081;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.event:hover .date {
+    background-color: #e91e63;
+}
+
+.medium-image {
+    width: 200px; /* Srednja veličina */
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0; /* Sakrivanje slike po defaultu */
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.event:hover .medium-image {
+    opacity: 1; /* Prikazivanje slike na hover */
+    bottom: -200px; /* Pomeranje slike ispod datuma */
+}
